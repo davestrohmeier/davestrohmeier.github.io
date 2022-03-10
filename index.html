@@ -134,7 +134,10 @@
     }
     
     var map = L.map('map',options)
-    
+   
+   var NJ2020 = L.tileLayer.wms('https://img.nj.gov/imagerywms/Natural2020', {
+    layers: 'Natural2020', maxZoom:22
+});    
    var NJ2015 = L.tileLayer.wms('https://img.nj.gov/imagerywms/Natural2015?', {
     layers: 'Natural2015', maxZoom:22
 });
@@ -151,7 +154,7 @@
     var NJTidelands = L.tileLayer.wms('https://img.nj.gov/imagerywms/BlackWhite1977?', {
     layers: 'BlackWhite1977', maxZoom:22
 });
-    map.addLayer(NJ2015);
+    map.addLayer(NJ2020);
     
 var customOptions = {'className' : 'custom'};
  
@@ -342,7 +345,8 @@ var vectorLayers = {
                     }
 
 var baseMaps = {
-            "<b>2015 Aerial</b>": NJ2015,
+            "<b>2020 Aerial</b>": NJ2020,
+	    "<b>2015 Aerial</b>": NJ2015,
             "<b>World Imagery</b>": WorldImagery,
             "<b>World Street Map</b>": WorldStreetMap,
             "<b>1977 Tidelands</b>": NJTidelands,
