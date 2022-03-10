@@ -141,8 +141,13 @@
    var NJ2015 = L.tileLayer.wms('https://img.nj.gov/imagerywms/Natural2015?', {
     layers: 'Natural2015', maxZoom:22
 });
-   var WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
+   var NJ2012 = L.tileLayer.wms('var NJ2015 = L.tileLayer.wms('https://img.nj.gov/imagerywms/Natural2015?', {
+    layers: 'Natural2012', maxZoom:22
+});', {
+    layers: 'Natural2015', maxZoom:22
+});
+    var WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
     maxZoom:22
 });
     var WorldStreetMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
@@ -347,6 +352,7 @@ var vectorLayers = {
 var baseMaps = {
             "<b>2020 Aerial</b>": NJ2020,
 	    "<b>2015 Aerial</b>": NJ2015,
+	    "<b>2012 Aerial</b>": NJ2012,
             "<b>World Imagery</b>": WorldImagery,
             "<b>World Street Map</b>": WorldStreetMap,
             "<b>1977 Tidelands</b>": NJTidelands,
