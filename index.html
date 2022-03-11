@@ -112,15 +112,33 @@
         <li>2018050</li>
     </ul>
 <!--INPUTTING THE PROJECT NUMBER-->    
-<div id="butto" style= 'float:right; z-index: 999; padding-top: 550px; padding-left: 50px; z-index:999'>
+/*<div id="butto" style= 'float:right; z-index: 999; padding-top: 550px; padding-left: 50px; z-index:999'>
     
 <button id="butt" style="height: 40px; font-family: z-index: 998; Garamond; font-size: 20px;z-index:999">Enter Project Number</button>
 
 <div style= "padding-top: 50px; z-index: 999">
  <img src= 'Symbols/legend.png'>
 </div>
-        </div>
+        </div>*/
+
+<div id="butto" style= 'float:right; z-index: 999; padding-top: 550px; padding-left: 50px; z-index:999'>
     
+<p>Project Codes :</p>
+<select id='myProjects'style="height: 40px; font-family: z-index: 998; Garamond; font-size: 20px;z-index:999">
+<option value="2017182">2017182</option>
+<option value="2017185">2017185</option>
+<option value="2017190">2017190</option>
+ <option value="2017200">2017200</option>
+ </select>
+
+<div style= "padding-top: 50px; z-index: 999">
+ <img src= 'Symbols/legend.png'>
+</div>
+        </div>	  
+	    
+	    
+	    
+	    
 <script src="APE_WGS_03112022.json"></script>
 <script src="STP_WGS_04252018.js"></script>
 <script src="EU_WGS_04272018.json"></script>
@@ -180,9 +198,20 @@ var featureLayer= L.layerGroup().addTo(map);
 var euLayer= L.layerGroup().addTo(map);
     
 //Event Listener Button
-document.getElementById('butt')
+/*document.getElementById('butt')
     .addEventListener('click', function(){
-    var proNum = prompt('Please enter project code as 7 digit number.');
+    var proNum = prompt('Please enter project code as 7 digit number.');*/
+	
+var myOptions = {
+    val1 : '2017190',
+    val2 : '2017200'
+};
+var proNum = $('#myProjects');
+$.each(myOptions, function(val, text) {
+    mySelect.append(
+        $('<option></option>').val(val).html(text)
+    );
+});	
 
     //The Area of Potential Effects
 var ape2=L.geoJson(ape
