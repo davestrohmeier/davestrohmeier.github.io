@@ -214,7 +214,7 @@ var feat2=L.geoJson(feat
          if (feature.properties.project==proNum) {
          return feature}},
            onEachFeature : function(feature,layer) {
-    layer.bindPopup("<strong>" + feature.properties.Feature+"</strong>", customOptions
+    layer.bindPopup("<strong>" + feature.properties.feature+"</strong>", customOptions
 )}
              }).setStyle({color:"blue", fillOpacity:0.5}).addTo(map).addTo(featureLayer);
     
