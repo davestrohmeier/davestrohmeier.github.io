@@ -99,7 +99,7 @@
     </header>
     <div id='map'></div>
     <div id= "rightSide">
-        /*<ul id='list' style= 'font-size: 28pt; padding-top: 59px; padding-bottom: 50px; color: whitesmoke; 30%; float: right; right: 500px; zindex;999'>
+        <ul id='list' style= 'font-size: 28pt; padding-top: 59px; padding-bottom: 50px; color: whitesmoke; 30%; float: right; right: 500px; zindex;999'>
         <li>2017182</li>
         <li>2017185</li>
         <li>2017190</li>
@@ -124,16 +124,9 @@
 <div style= "padding-top: 50px; z-index: 999">
  <img src= 'Symbols/legend.png'>
 </div>
-        </div>*/  
+        </div>  
 	    
-<p>Project Codes :</p>
-<select id='myProjects'style="height: 40px; font-family: z-index: 998; Garamond; font-size: 20px;z-index:999">
-<option value="2017182">2017182</option>
-<option value="2017185">2017185</option>
-<option value="2017190">2017190</option>
- <option value="2017200">2017200</option>
- </select>	    
-	    
+    
 	    
 <script src="APE_WGS_03112022.json"></script>
 <script src="STP_WGS_04252018.js"></script>
@@ -194,20 +187,10 @@ var featureLayer= L.layerGroup().addTo(map);
 var euLayer= L.layerGroup().addTo(map);
     
 //Event Listener Button
-/*document.getElementById('butt')
+document.getElementById('butt')
     .addEventListener('click', function(){
-    var proNum = prompt('Please enter project code as 7 digit number.');*/
+    var proNum = prompt('Please enter project code as 7 digit number.');
 	
-var myOptions = {
-    val1 : '2017190',
-    val2 : '2017200'
-};
-var proNum = $('#myProjects');
-$.each(myOptions, function(val, text) {
-    mySelect.append(
-        $('<option></option>').val(val).html(text)
-    );
-});	
 
     //The Area of Potential Effects
 var ape2=L.geoJson(ape
