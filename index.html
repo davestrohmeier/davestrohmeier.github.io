@@ -429,7 +429,19 @@ var apeLayer= L.layerGroup().addTo(map);
 var stpLayer= L.layerGroup().addTo(map);
 var featureLayer= L.layerGroup().addTo(map);
 var euLayer= L.layerGroup().addTo(map);
-    
+
+//JScript for Dropdown Selaection
+ var selectDropdown = {
+    val1 : '2019270',
+    val2 : '2019271'
+};
+var mySelect = $('#my-dropdown');
+$.each(selectDropdown, function(val, text) {
+    mySelect.append(
+        $('<option></option>').val(val).html(text)
+    );
+});     	
+	
 //Event Listener Button
 document.getElementById('butt')
     .addEventListener('click', function(){
@@ -609,17 +621,7 @@ var baseMaps = {
             "<b>1930 Aerial</b>": NJ1930
         }
 
-//JScript for Dropdown Selaection
- var selectDropdown = {
-    val1 : '2019270',
-    val2 : '2019271'
-};
-var mySelect = $('#my-dropdown');
-$.each(selectDropdown, function(val, text) {
-    mySelect.append(
-        $('<option></option>').val(val).html(text)
-    );
-});      
+ 
 
         L.control.layers(baseMaps, vectorLayers, { collapsed:true }).addTo(map);  
 
